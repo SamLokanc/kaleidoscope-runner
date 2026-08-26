@@ -20,7 +20,7 @@ bash src/03-initialize_kaleidoscope.sh \
 echo "  Done." >&2
 
 echo "Running file conversion..." >&2
-bash src/04-run_kaleidoscope.sh \
+bash src/04-call_kaleidoscope.sh \
   -k "${KALEIDOSCOPE}" \
   -s "${SETTINGS}" \
   -l "${LICENSE}"
