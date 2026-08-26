@@ -1,0 +1,27 @@
+#!/bin/bash
+#SBATCH --time=5:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=20G
+#SBATCH --job-name=kaleidoscope
+#SBATCH --nodelist=se083
+#SBATCH --partition=skylake
+#SBATCH -e slurm/%j.err
+#SBATCH -o slurm/%j.out
+#SBATCH --mail-type=ALL
+
+echo "Writing new Kaleidoscope settings file at ${SETTINGS}..." >&2
+bash src/03-initialize_kaleidoscope.sh \
+ -s "${SETTINGS}" \
+ -i "${IN_RAW}" \
+ -o "${IN_PROCESSED}" \
+ -t "${SLURM_CPUS_PER_TASK}"
+echo "  Done." >&2
+
+echo "Running file conversion..." >&2
+bash src/04-run_kaleidoscope.sh \
+  -k "${KALEIDOSCOPE}" \
+  -s "${SETTINGS}" \
+  -l "${LICENSE}"
+echo "  Done." >&2
