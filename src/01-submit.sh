@@ -68,6 +68,6 @@ KAL_JOBID=$(sbatch \
   --export=ALL \
   --parsable \
   ${EMAIL:+--mail-user "${EMAIL}"} \
-  "${SCRATCH}/src/02-run_kaleidoscope.slurm"
+  "${SCRATCH}/src/02a-run_kaleidoscope.slurm"
  )
  echo "Submitted Kaleidoscope job: ${KAL_JOBID}" >&2
