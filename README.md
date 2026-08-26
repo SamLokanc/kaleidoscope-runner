@@ -13,11 +13,9 @@
    - [Scratch Directory Set-up](#scratch-directory-set-up)
    - [Importing Data](#importing-data)
    - [Submitting jobs](#submitting-jobs)
-   - [Viewing the Summary Dashboard](#viewing-the-summary-dashboard)
 6. [Configuration](#configuration)
+   - [Kaleidoscope Settings](#kaleidoscope-settings)
    - [Slurm Specifications](#slurm-specifications)
-   - [Exclude Species](#exclude-species)
-7. [References](#references)
 
 ## Project Overview
 
